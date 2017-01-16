@@ -4,7 +4,6 @@ from django.shortcuts import render
 from django.http import HttpResponse, JsonResponse, Http404
 
 from django.shortcuts import render
-from django.template import RequestContext
 from predictor.models import ImageFile
 
 
