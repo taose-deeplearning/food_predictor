@@ -4,7 +4,7 @@ from django.shortcuts import render
 from django.http import HttpResponse, JsonResponse, Http404
 
 from django.shortcuts import render
-from predictor.models import ImageFile
+# from predictor.models import ImageFile
 
 
 def index(request):
@@ -16,10 +16,10 @@ def upload(request):
         foods = []
         post_data = request.POST
         post_data.update(request.FILES)
-        imagefile = ImageFile()
+        # imagefile = ImageFile()
         image = post_data['image_file']
         if image:
-            imagefile.data = image
+            # imagefile.data = image
             # for debug
             foods.append({'name': u'パイナップル'})
 
