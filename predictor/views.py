@@ -1,5 +1,6 @@
 # Create your views here.
 from django.http import HttpResponse, JsonResponse, Http404
+from django.views.decorators.csrf import csrf_exempt
 
 from django.shortcuts import render
 # from predictor.models import ImageFile
@@ -9,6 +10,7 @@ def index(request):
     return HttpResponse('index')
 
 
+@csrf_exempt
 def upload(request):
     if request.method == 'POST':
         foods = []
