@@ -3,6 +3,7 @@ from django.http import HttpResponse, JsonResponse, Http404
 from django.views.decorators.csrf import csrf_exempt
 
 from django.shortcuts import render
+from predictor.predictor import get_labels
 # from predictor.models import ImageFile
 
 
@@ -21,11 +22,9 @@ def upload(request):
         if image:
             # imagefile.data = image
             # for debug
-            foods.append({'name': u'パイナップル'})
-
-        # json response
-        # for debug
-        foods.append({'name': u'りんご'})
+            array = get_labels(image)
+            for ar in array:
+                foods.append({'name': ar})
         return JsonResponse({"foods": foods})
     else:
         raise Http404('invalid request')
