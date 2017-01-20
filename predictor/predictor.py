@@ -53,7 +53,6 @@ def get_labels(image_path):
     model_object_path = 'model_object.pkl'
     model_recog_path = 'model_recog.pkl'
     image = np.array(Image.open(image_path))[:, :, ::-1]
-    print(image)
     model_object = load_model(model_object_path)
     model_recog = load_model(model_recog_path)
 
